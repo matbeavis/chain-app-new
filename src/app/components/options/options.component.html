@@ -1,0 +1,72 @@
+<div class="options-container">
+    <h2>Opções</h2>
+  
+    <!-- Mudança de senha -->
+    <div class="password-change">
+      <h3>Mudar Senha</h3>
+      <div class="form-group">
+        <label for="new-password">Nova Senha:</label>
+        <input type="password" id="new-password" class="form-control" [(ngModel)]="newPassword">
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirmar Nova Senha:</label>
+        <input type="password" id="confirm-password" class="form-control" [(ngModel)]="confirmPassword">
+      </div>
+      <button class="change-password-button" (click)="changePassword()">Mudar Senha</button>
+    </div>
+  
+    <!-- Escolha de gênero -->
+    <div class="gender-selection">
+      <h3>Gênero</h3>
+      <label>
+        <input type="radio" name="user-gender" value="M" [(ngModel)]="userGender"> Masculino 
+      </label>
+      <label>
+        <input type="radio" name="user-gender" value="F" [(ngModel)]="userGender"> Feminino 
+      </label>
+      <label>
+        <input type="radio" name="user-gender" value="NB" [(ngModel)]="userGender"> Não Binário 
+      </label>
+    </div>
+  
+    <!-- Escolha do gênero dos outros usuários -->
+    <div class="other-gender-selection">
+      <h3>Gênero dos Outros</h3>
+      <label>
+        <input type="radio" name="other-users-gender" value="M" [(ngModel)]="otherUsersGender"> Masculino 
+      </label>
+      <label>
+        <input type="radio" name="other-users-gender" value="F" [(ngModel)]="otherUsersGender"> Feminino 
+      </label>
+      <label>
+        <input type="radio" name="other-users-gender" value="Todos" [(ngModel)]="otherUsersGender"> Todos
+      </label>
+    </div>
+  
+    <!-- Preferências de usuário -->
+    <h3>Preferências de Usuário</h3>
+    <table class="user-preferences">
+      <thead>
+        <tr>
+          <th>Você</th>
+          <th>Outros</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>
+              <input type="checkbox" [(ngModel)]="yourPreferences.attribute1"> Atributo 1
+            </label>
+          </td>
+          <td>
+            <label>
+              <input type="checkbox" [(ngModel)]="otherUsersPreferences.attribute1"> Atributo 1
+            </label>
+          </td>
+        </tr>
+        <!-- Adicionar mais linhas de preferências -->
+      </tbody>
+    </table>
+  </div>
+  
