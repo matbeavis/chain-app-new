@@ -16,25 +16,20 @@ import { OptionsComponent } from './components/options/options.component';
 import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    LoginComponent,
-    SignupComponent,
-    RecoveryComponent,
-    HomeComponent,
-    UserProfileComponent,
-    OptionsComponent,
-    ChatComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    RouterModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		FooterComponent,
+		LoginComponent,
+		SignupComponent,
+		RecoveryComponent,
+		HomeComponent,
+		UserProfileComponent,
+		OptionsComponent,
+		ChatComponent
+	],
+	imports: [BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

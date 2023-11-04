@@ -1,18 +1,17 @@
 <div class="recovery-container">
-    <h2>Recuperação de Conta</h2>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" class="form-control" [(ngModel)]="email">
-    </div>
-    <button class="send-code-button" (click)="sendCode()">Enviar Código</button>
-    
-    <div *ngIf="codeSent" class="code-section">
-      <p>Um código foi enviado para o seu email. Insira-o abaixo:</p>
-      <div class="form-group">
-        <label for="verificationCode">Código de Verificação:</label>
-        <input type="text" id="verificationCode" class="form-control" [(ngModel)]="verificationCode">
-      </div>
-      <button class="login-with-code-button" (click)="loginWithCode()">Logar com Código</button>
-    </div>
-  </div>
-  
+	<h2>Recuperação de Conta</h2>
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input type="email" id="email" class="form-control" [(ngModel)]="email" />
+	</div>
+	<button class="send-code-button" (click)="sendCode()">Enviar Código</button>
+
+	<div *ngIf="codeSent" class="code-section">
+		<p>Um código foi enviado para o seu email. Insira-o abaixo:</p>
+		<div class="form-group">
+			<label for="verificationCode">Código de Verificação:</label>
+			<input type="text" id="verificationCode" class="form-control" [(ngModel)]="verificationCode" />
+		</div>
+		<button class="login-with-code-button" (click)="loginWithCode()">Logar com Código</button>
+	</div>
+</div>

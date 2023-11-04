@@ -1,0 +1,4 @@
+{
+    "src/app/**/*.{ts,html}": "npx prettier --write",
+    "src/app/**/*.ts": "npx eslint --quiet --fix"
+}
