@@ -1,56 +1,70 @@
 .home-container {
-    background-color: #ccc; /* Fundo cinza */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .profile-card {
-    background-color: #9b59b6; /* Roxo */
-    color: #f7d08a; /* Laranja */
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-  }
-  
-  .carousel {
-    
-  }
-  
-  .description {
-    margin-top: 10px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .interaction-buttons {
-    margin-top: 10px;
-  }
-  
-  .heart-button,
-  .x-button {
-    background-color: #f7d08a; /* Laranja */
-    color: #9b59b6; /* Roxo */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 0 10px;
-    cursor: pointer;
-  }
-  
-  .profile-button,
-  .settings-button {
-    background-color: #f7d08a; /* Laranja */
-    color: #9b59b6; /* Roxo */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-  
+	background-color: #ccc; /* Fundo cinza */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+.profile-card {
+	background-color: #9b59b6; /* Roxo */
+	color: #f7d08a; /* Laranja */
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+	width: 80%;
+	max-width: 500px;
+	text-align: center;
+}
+
+.carousel {
+}
+
+.description {
+	margin-top: 10px;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.interaction-buttons {
+	margin-top: 10px;
+}
+
+.heart-button,
+.x-button {
+	background-color: #f7d08a; /* Laranja */
+	color: #9b59b6; /* Roxo */
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.profile-button,
+.settings-button {
+	background-color: #f7d08a; /* Laranja */
+	color: #9b59b6; /* Roxo */
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.logout-button {
+	background-color: #f7d08a; /* Laranja suave */
+	color: #9b59b6; /* Roxo suave */
+	margin-left: 10px;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.logout-button:hover {
+	background-color: #9b59b6; /* Roxo suave */
+	color: #f7d08a; /* Laranja suave */
+}

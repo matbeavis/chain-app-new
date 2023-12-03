@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from '../../service/navigation.service';
 
 interface Profile {
 	id: number;
@@ -12,6 +13,8 @@ interface Profile {
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+	constructor(private navigationService: NavigationService) {}
+
 	profiles: Profile[] = [
 		{
 			id: 1,
@@ -31,12 +34,14 @@ export class HomeComponent {
 	}
 
 	goToProfile() {
-		// redirecionar para o perfil do usuário
-		console.log('Ir para o perfil do usuário');
+		this.navigationService.goToUserProfile();
 	}
 
 	goToSettings() {
-		// redirecionar para as configurações gerais
-		console.log('Ir para as configurações gerais');
+		this.navigationService.goToOptions();
+	}
+
+	logout() {
+		this.navigationService.goToLogin();
 	}
 }
