@@ -1,16 +1,26 @@
 <div class="home-container">
-    <div class="profile-card" *ngFor="let profile of profiles">
-      <div class="carousel">
-        <!-- Aqui adicionar um carrossel de imagens para o perfil -->
-        <!-- cada perfil tem até 5 imagens -->
-      </div>
-      <p class="description">{{ profile.description }}</p>
-      <div class="interaction-buttons">
-        <button class="heart-button" (click)="likeProfile(profile)">❤️</button>
-        <button class="x-button" (click)="rejectProfile(profile)">❌</button>
-      </div>
-    </div>
-    <button class="profile-button" (click)="goToProfile()">Meu Perfil</button>
-    <button class="settings-button" (click)="goToSettings()">Configurações</button>
-  </div>
-  
+	<div class="profile-card" *ngFor="let profile of profiles">
+		<div class="carousel">
+			<!-- Aqui adicionar um carrossel de imagens para o perfil -->
+			<!-- cada perfil tem até 5 imagens -->
+		</div>
+		<div class="photo-panel">
+			<div *ngFor="let photo of profile.photos; let i = index" class="photo">
+				<!-- Aqui você pode adicionar as fotos do perfil -->
+				<img src="{{ photo }}" alt="Foto {{ i + 1 }}" />
+			</div>
+		</div>
+		<p class="description">{{ profile.description }}</p>
+		<p class="description">{{ profile.age }} anos</p>
+		<p class="description">{{ profile.distance }} km</p>
+		<div class="interaction-buttons">
+			<button class="heart-button" (click)="likeProfile()">❤️</button>
+			<button class="x-button" (click)="rejectProfile()">❌</button>
+		</div>
+	</div>
+	<button class="profile-button" (click)="goToProfile()">Meu Perfil</button>
+	<div>
+		<button class="settings-button" (click)="goToSettings()">Configurações</button>
+		<button class="logout-button" (click)="logout()">Logout</button>
+	</div>
+</div>

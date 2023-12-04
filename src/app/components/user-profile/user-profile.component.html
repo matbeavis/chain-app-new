@@ -1,30 +1,37 @@
 <div class="user-profile-container">
-    <h2>Meu Perfil</h2>
-    <div class="photo-panel">
-      <div *ngFor="let photo of photos; let i = index" class="photo">
-        <!-- Aqui você pode adicionar as fotos do perfil -->
-        <img src="{{ photo }}" alt="Foto {{ i + 1 }}" />
-      </div>
-      <div class="add-photo" *ngIf="photos.length < 5">
-        <label for="photo-upload" class="upload-label">+</label>
-        <input type="file" id="photo-upload" (change)="uploadPhoto($event)" accept="image/*" />
-      </div>
-    </div>
-    <div class="description">
-      <label for="user-description">Descrição:</label>
-      <textarea id="user-description" class="description-text" [(ngModel)]="userDescription"></textarea>
-    </div>
-    <div class="preferences">
-      <div class="preference">
-        <label for="user-age">Idade:</label>
-        <input type="range" id="user-age" [(ngModel)]="userAge" min="18" max="75">
-        <p>{{ userAge }} anos</p>
-      </div>
-      <div class="preference">
-        <label for="user-distance">Distância (KM):</label>
-        <input type="range" id="user-distance" [(ngModel)]="userDistance" min="1" max="40">
-        <p>{{ userDistance }} km</p>
-      </div>
-    </div>
-  </div>
-  
+	<h2>Meu Perfil</h2>
+	<div class="photo-panel">
+		<div *ngFor="let photo of photos; let i = index" class="photo">
+			<!-- Aqui você pode adicionar as fotos do perfil -->
+			<img src="{{ photo }}" alt="Foto {{ i + 1 }}" />
+		</div>
+		<div class="add-photo" *ngIf="photos.length < 4">
+			<div class="circle">
+				<label for="photo-upload">Adicionar foto</label>
+				<input type="url" id="photo-upload" [(ngModel)]="photoUrl" />
+				<button class="send-button" (click)="uploadPhoto()">Enviar</button>
+			</div>
+		</div>
+	</div>
+	<div class="description">
+		<label for="user-description">Descrição:</label>
+		<textarea id="user-description" class="description-text" [(ngModel)]="userDescription"></textarea>
+	</div>
+	<div class="preferences">
+		<div class="preference">
+			<label for="user-age">Idade:</label>
+			<input type="range" id="user-age" [(ngModel)]="userAge" min="18" max="75" />
+			<p>{{ userAge }} anos</p>
+		</div>
+		<div class="preference">
+			<label for="user-distance">Distância (KM):</label>
+			<input type="range" id="user-distance" [(ngModel)]="userDistance" min="1" max="40" />
+			<p>{{ userDistance }} km</p>
+		</div>
+	</div>
+	<div>
+		<button class="buttons submit" (click)="deletePhotos()">Apagar Fotos</button>
+		<button class="buttons submit" (click)="submit()">Salvar</button>
+		<button class="buttons" (click)="back()">Voltar</button>
+	</div>
+</div>

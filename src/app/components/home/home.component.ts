@@ -1,42 +1,48 @@
-import { Component } from '@angular/core';
-
-interface Profile {
-  id: number;
-  images: string[]; // Um array com as URLs das imagens do perfil
-  description: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { NavigationService } from '../../service/navigation.service';
+import { LocalStorageService } from '../../service/localstorage.service';
+import { Profile } from '../../interfaces/profile';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  profiles: Profile[] = [
-    {
-      id: 1,
-      images: ['url1', 'url2', 'url3'], // URLs das imagens
-      description: 'Descrição do perfil 1. Até 300 caracteres.'
-    },
-  ];
+export class HomeComponent implements OnInit {
+	constructor(
+		private localStorageService: LocalStorageService,
+		private navigationService: NavigationService
+	) {}
 
-  likeProfile(profile: Profile) {
-    // aceitar o perfil e ir para a tela de chat
-    console.log('Perfil aceito:', profile);
-  }
+	profiles: Profile[] = [];
 
-  rejectProfile(profile: Profile) {
-    // rejeitar o perfil e mostrar o próximo
-    console.log('Perfil rejeitado:', profile);
-  }
+	ngOnInit(): void {
+		const email = this.localStorageService.getItem('loggedUser');
+		this.profiles = this.localStorageService.getItem('profiles');
+		if (!this.profiles) this.profiles = [];
+		const findIndex = this.profiles.findIndex((profile: Profile) => profile.email === email);
+		if (findIndex !== -1) {
+			this.profiles.splice(findIndex, 1);
+		}
+	}
 
-  goToProfile() {
-    // redirecionar para o perfil do usuário
-    console.log('Ir para o perfil do usuário');
-  }
+	likeProfile() {
+		alert('Perfil aceito:');
+	}
 
-  goToSettings() {
-    // redirecionar para as configurações gerais
-    console.log('Ir para as configurações gerais');
-  }
+	rejectProfile() {
+		alert('Perfil rejeitado:');
+	}
+
+	goToProfile() {
+		this.navigationService.goToUserProfile();
+	}
+
+	goToSettings() {
+		this.navigationService.goToOptions();
+	}
+
+	logout() {
+		this.navigationService.goToLogin();
+	}
 }

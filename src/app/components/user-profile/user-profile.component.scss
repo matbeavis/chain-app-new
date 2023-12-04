@@ -1,0 +1,147 @@
+.user-profile-container {
+	background-color: #9b59b6; /* Roxo */
+	color: #f7d08a; /* Laranja */
+	padding: 20px;
+	border-radius: 10px;
+	width: 80%;
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+.photo-panel {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.photo {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.upload-label {
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.description {
+	margin-bottom: 20px;
+}
+
+.description-text {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #f7d08a; /* Laranja */
+	border-radius: 5px;
+}
+
+.preferences {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.preference {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.preference label {
+	width: 50px;
+	text-align: left;
+}
+
+input[type='range'] {
+	width: 70%;
+}
+
+.preferences p {
+	font-weight: bold;
+}
+
+.submit {
+	background-color: #f7d08a; /* Laranja suave */
+	color: #9b59b6; /* Roxo suave */
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.buttons {
+	background-color: #f7d08a; /* Laranja suave */
+	color: #9b59b6; /* Roxo suave */
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.buttons:hover {
+	background-color: #9b59b6; /* Roxo suave */
+	color: #f7d08a; /* Laranja suave */
+}
+
+.add-photo {
+	width: 160px;
+	height: 160px; /* Aumente a altura para acomodar o botão abaixo do input */
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.circle {
+	text-align: center; /* Centralizar o conteúdo horizontalmente */
+}
+
+#photo-upload {
+	width: 100px;
+	margin-top: 10px; /* Ajuste conforme necessário para alinhar verticalmente */
+}
+
+.send-button {
+	justify-content: center;
+	text-align: center;
+	display: block;
+	margin-top: 10px; /* Espaço entre o input e o botão */
+	margin-left: 15%;
+	background-color: #f7d08a; /* Laranja suave */
+	color: #9b59b6; /* Roxo suave */
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.send-button:hover {
+	background-color: #9b59b6; /* Roxo suave */
+	color: #f7d08a; /* Laranja suave */
+}
+
+label {
+	display: block;
+}

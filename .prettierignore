@@ -1,0 +1,9 @@
+# Ignore all HTML files:
+.angular
+*.md
+/src/assests/
+/src/fonts/
+/node_modules/
+# Ignore artifacts:
+build
+coverage
