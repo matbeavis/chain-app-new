@@ -34,6 +34,17 @@ h3 {
 	cursor: pointer;
 }
 
+.back-button {
+	background-color: #f7d08a; /* Laranja */
+	color: #9b59b6; /* Roxo */
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 20px;
+}
+
+.back-button:hover,
 .change-password-button:hover {
 	background-color: #9b59b6; /* Roxo */
 	color: #f7d08a; /* Laranja */

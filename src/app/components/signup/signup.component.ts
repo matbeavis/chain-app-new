@@ -24,11 +24,10 @@ export class SignupComponent implements OnInit {
 
 	ngOnInit() {
 		this.users = this.localStorageService.getItem('users');
+		if (this.users === null) this.users = [];
 	}
 
 	signup() {
-		this.localStorageService.removeItem('users');
-		if (this.users == null) this.users = [];
 		const existingUser = this.users.find((user: User) => {
 			return user.email === this.email;
 		});

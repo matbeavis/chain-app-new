@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RecoveryComponent } from './components/recovery/recovery.component';
 import { OptionsComponent } from './components/options/options.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -27,7 +28,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 		OptionsComponent,
 		UserProfileComponent
 	],
-	imports: [BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule, AppRoutingModule],
+	imports: [BrowserModule, FormsModule, BrowserAnimationsModule, RouterModule, AppRoutingModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })

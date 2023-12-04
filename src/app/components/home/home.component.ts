@@ -1,36 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../../service/navigation.service';
-
-interface Profile {
-	id: number;
-	images: string[]; // Um array com as URLs das imagens do perfil
-	description: string;
-}
+import { LocalStorageService } from '../../service/localstorage.service';
+import { Profile } from '../../interfaces/profile';
 
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-	constructor(private navigationService: NavigationService) {}
+export class HomeComponent implements OnInit {
+	constructor(
+		private localStorageService: LocalStorageService,
+		private navigationService: NavigationService
+	) {}
 
-	profiles: Profile[] = [
-		{
-			id: 1,
-			images: ['url1', 'url2', 'url3'], // URLs das imagens
-			description: 'Descrição do perfil 1. Até 300 caracteres.'
+	profiles: Profile[] = [];
+
+	ngOnInit(): void {
+		const email = this.localStorageService.getItem('loggedUser');
+		this.profiles = this.localStorageService.getItem('profiles');
+		if (!this.profiles) this.profiles = [];
+		const findIndex = this.profiles.findIndex((profile: Profile) => profile.email === email);
+		if (findIndex !== -1) {
+			this.profiles.splice(findIndex, 1);
 		}
-	];
-
-	likeProfile(profile: Profile) {
-		// aceitar o perfil e ir para a tela de chat
-		console.log('Perfil aceito:', profile);
 	}
 
-	rejectProfile(profile: Profile) {
-		// rejeitar o perfil e mostrar o próximo
-		console.log('Perfil rejeitado:', profile);
+	likeProfile() {
+		alert('Perfil aceito:');
+	}
+
+	rejectProfile() {
+		alert('Perfil rejeitado:');
 	}
 
 	goToProfile() {

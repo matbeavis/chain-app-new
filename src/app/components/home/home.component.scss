@@ -13,11 +13,8 @@
 	padding: 20px;
 	margin-bottom: 20px;
 	width: 80%;
-	max-width: 500px;
+	max-width: 600px;
 	text-align: center;
-}
-
-.carousel {
 }
 
 .description {
@@ -67,4 +64,26 @@
 .logout-button:hover {
 	background-color: #9b59b6; /* Roxo suave */
 	color: #f7d08a; /* Laranja suave */
+}
+
+.photo-panel {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.photo {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+}
+
+.photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
